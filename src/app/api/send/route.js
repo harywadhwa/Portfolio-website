@@ -1,12 +1,14 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
+import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST() {
   try {
     const data = await resend.emails.send({
-      from: 'Harsh <hwadhwa050@gmail.com>',
+      from: fromEmail,
       to: ['hwadhwa050@gmail.com'],
       subject: 'Hello world',
       react: (
@@ -18,8 +20,8 @@ export async function POST() {
       ),
     });
 
-    return Response.json(data);
+    return NextResponse.json(data);
   } catch (error) {
-    return Response.json({ error });
+    return NextResponse.json({ error });
   }
 }
