@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 resend.apiKeys.create({ name: 'Production' });
-Authorization:  RESEND_API_KEY;
+
 
 
 const resend = new Resend(process.env.RESEND_API_KEY);
