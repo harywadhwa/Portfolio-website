@@ -23,7 +23,7 @@ const navLinks = [
     },
 ];
 
-const navbar = () => {
+const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);  
   return (
     <nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100'>
@@ -66,7 +66,7 @@ const navbar = () => {
   )
 }
 
-export default navbar;
+export default Navbar;
 
 
 
