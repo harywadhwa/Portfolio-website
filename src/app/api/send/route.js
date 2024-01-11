@@ -11,6 +11,9 @@ const fromEmail = process.env.FROM_EMAIL;
 export async function POST() {
   try {   
     const data = await resend.emails.send({
+      headers: {
+        Authorization: `Bearer ${RESEND_API_KEY}`
+      },
       from: fromEmail,
       to: ['hwadhwa050@gmail.com'],
       subject: 'Hello world',
