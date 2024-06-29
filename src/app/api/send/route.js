@@ -15,7 +15,7 @@ export async function POST() {
       headers: {
         Authorization: `Bearer ${process.env.RESEND_API_KEY}` 
       },
-      from: fromEmail,
+      from: 'Acme <onboarding@resend.dev>',
       to: ['hwadhwa050@gmail.com'],
       subject: 'Hello world',
       react: (
